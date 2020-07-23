@@ -13,7 +13,6 @@
 		64728D9024CA08B500728825 /* TributacoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64728D8F24CA08B500728825 /* TributacoesView.swift */; };
 		64AD3FEF24C99FA000B3E86D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD3FEE24C99FA000B3E86D /* MenuView.swift */; };
 		64AD3FF124C9A0E100B3E86D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD3FF024C9A0E100B3E86D /* Color.swift */; };
-		64AD3FF324C9A76D00B3E86D /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD3FF224C9A76D00B3E86D /* MenuItemView.swift */; };
 		64AD3FF524C9AF0E00B3E86D /* NovaDeclaracaoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD3FF424C9AF0E00B3E86D /* NovaDeclaracaoButton.swift */; };
 		64AD3FF724C9B2C700B3E86D /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD3FF624C9B2C700B3E86D /* ProfileImageView.swift */; };
 		64AD3FF924C9C9DD00B3E86D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AD3FF824C9C9DD00B3E86D /* WelcomeView.swift */; };
@@ -38,7 +37,6 @@
 		64728D8F24CA08B500728825 /* TributacoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TributacoesView.swift; sourceTree = "<group>"; };
 		64AD3FEE24C99FA000B3E86D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		64AD3FF024C9A0E100B3E86D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		64AD3FF224C9A76D00B3E86D /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		64AD3FF424C9AF0E00B3E86D /* NovaDeclaracaoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaDeclaracaoButton.swift; sourceTree = "<group>"; };
 		64AD3FF624C9B2C700B3E86D /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		64AD3FF824C9C9DD00B3E86D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			children = (
 				64AD3FEE24C99FA000B3E86D /* MenuView.swift */,
 				64AD3FF624C9B2C700B3E86D /* ProfileImageView.swift */,
-				64AD3FF224C9A76D00B3E86D /* MenuItemView.swift */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -255,7 +252,6 @@
 				64E4E5AF24C99EA200E84AFD /* SceneDelegate.swift in Sources */,
 				64AD3FF524C9AF0E00B3E86D /* NovaDeclaracaoButton.swift in Sources */,
 				64AD3FF924C9C9DD00B3E86D /* WelcomeView.swift in Sources */,
-				64AD3FF324C9A76D00B3E86D /* MenuItemView.swift in Sources */,
 				64AD3FF124C9A0E100B3E86D /* Color.swift in Sources */,
 				64AD3FFD24C9CC9B00B3E86D /* View.swift in Sources */,
 				64AD400124C9F68300B3E86D /* DeclaracaoAjusteAnualView.swift in Sources */,
