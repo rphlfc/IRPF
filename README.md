@@ -2,11 +2,11 @@ IRPF
 
 Implementação em SwiftUI de layout proposto pelo Guilherme Farina.
 
-Redesign App Imposto de Renda
+Redesign App Imposto de Renda<br>
 https://www.behance.net/gallery/99700537/Redesign-App-Imposto-de-Renda
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Yon-Ydi8JSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Vídeo<br>
+https://www.youtube.com/embed/Yon-Ydi8JSk
 
 <br>
 
