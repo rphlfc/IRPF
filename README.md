@@ -5,9 +5,10 @@ Implementação em SwiftUI de layout proposto pelo Guilherme Farina.
 Redesign App Imposto de Renda
 https://www.behance.net/gallery/99700537/Redesign-App-Imposto-de-Renda
 
-<p align="center">
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Yon-Ydi8JSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+
+<br>
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/16376748/88340188-bf8c4300-cd11-11ea-880c-de9925e12785.png" width="200">
