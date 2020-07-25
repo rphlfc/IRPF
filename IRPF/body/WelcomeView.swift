@@ -8,7 +8,24 @@
 
 import SwiftUI
 
+
+struct CheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        return HStack {
+            configuration.label
+            Spacer()
+            Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                .resizable()
+                .frame(width: 22, height: 22)
+                .onTapGesture { configuration.isOn.toggle() }
+        }
+    }
+}
+
 struct WelcomeView: View {
+    @Environment(\.colorScheme) var colorScheme
+    @State var isDarkOn = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -18,7 +35,7 @@ struct WelcomeView: View {
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                     
                     Text("Evaristo Costa")
-                        .foregroundColor(Color(#colorLiteral(red: 0.156845212, green: 0.1568739116, blue: 0.1568388939, alpha: 1)))
+                        .foregroundColor(Color("navigationForeground"))
                         .font(.system(size: 32, weight: .black))
                 }
                 .padding(.leading, 24)
@@ -28,22 +45,31 @@ struct WelcomeView: View {
                 
                 VStack {
                     Button(action: {
-                        print("Dark mode")
+                        let preferences = UserDefaults.standard
+                        var theme = preferences.string(forKey: "userTheme")
+                        if theme == "light" {
+                            theme = "dark"
+                        } else {
+                           theme = "light"
+                        }
+                        preferences.set(theme, forKey: "userTheme")
+                        SceneDelegate.shared?.changeTheme(themeVal: theme!)
                     }) {
-                        Image(systemName: "moon.circle.fill")
-                            .resizable()
-                            .foregroundColor(.darkModeButtonColor)
+                        Image(systemName: self.colorScheme == .light ? "moon.fill" : "sun.max.fill")
+                        .foregroundColor(Color("modeButtonForeground"))
                     }
                     .frame(width: 30, height: 30)
+                    .background(Color("modeButtonBackground"))
+                    .cornerRadius(15)
                     .padding(.trailing, 24)
                 }
             }
-            .background(Color.welcomeBanckgroundColor)
+            .background(Color("navigationBackground"))
             .padding(.top, 24)
         }
-        .background(Color.welcomeBanckgroundColor)
+        .background(Color("navigationBackground"))
         .cornerRadius(40, corners: [.bottomRight])
-        .shadow(color: .shadowColor, radius: 10)
+        .shadow(color: Color("shadow"), radius: 10)
     }
 }
 

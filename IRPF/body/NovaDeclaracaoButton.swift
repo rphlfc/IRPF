@@ -30,7 +30,7 @@ struct NovaDeclaracaoButton: View {
         .frame(height: 45)
         .background(Color.buttonBackgroundColor)
         .cornerRadius(22)
-        .shadow(color: .shadowColor, radius: 10)
+        .shadow(color: Color("shadow"), radius: 10)
     }
 }
 

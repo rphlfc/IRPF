@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642F3CA624CBB05600E86905 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642F3CA524CBB05600E86905 /* Colors.xcassets */; };
+		642F3CAC24CCC43C00E86905 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F3CAB24CCC43C00E86905 /* HelpView.swift */; };
+		642F3CAE24CCC4CD00E86905 /* HelpRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F3CAD24CCC4CD00E86905 /* HelpRowView.swift */; };
+		642F3CB024CCCEB100E86905 /* NeedHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F3CAF24CCCEB100E86905 /* NeedHelpView.swift */; };
 		64728D8924CA013100728825 /* UltimasDeclaracoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64728D8824CA013100728825 /* UltimasDeclaracoesView.swift */; };
 		64728D8B24CA031A00728825 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64728D8A24CA031A00728825 /* ProgressBar.swift */; };
 		64728D8D24CA07E700728825 /* DeclaracoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64728D8C24CA07E700728825 /* DeclaracoesView.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		642F3CA524CBB05600E86905 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		642F3CAB24CCC43C00E86905 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		642F3CAD24CCC4CD00E86905 /* HelpRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRowView.swift; sourceTree = "<group>"; };
+		642F3CAF24CCCEB100E86905 /* NeedHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedHelpView.swift; sourceTree = "<group>"; };
 		64728D8824CA013100728825 /* UltimasDeclaracoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimasDeclaracoesView.swift; sourceTree = "<group>"; };
 		64728D8A24CA031A00728825 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		64728D8C24CA07E700728825 /* DeclaracoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclaracoesView.swift; sourceTree = "<group>"; };
@@ -67,6 +75,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642F3CB124CCE43A00E86905 /* ajuda */ = {
+			isa = PBXGroup;
+			children = (
+				642F3CAB24CCC43C00E86905 /* HelpView.swift */,
+				642F3CAD24CCC4CD00E86905 /* HelpRowView.swift */,
+				642F3CAF24CCCEB100E86905 /* NeedHelpView.swift */,
+			);
+			path = ajuda;
+			sourceTree = "<group>";
+		};
 		64728D8E24CA083A00728825 /* declaracoes */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,12 +157,14 @@
 			children = (
 				64AD400524C9FEBA00B3E86D /* menu */,
 				64AD400624C9FEDD00B3E86D /* body */,
+				642F3CB124CCE43A00E86905 /* ajuda */,
 				64AD400424C9FEA600B3E86D /* extensions */,
 				64F247B924CA2F1D00ED89B6 /* custom */,
 				64E4E5AC24C99EA200E84AFD /* AppDelegate.swift */,
 				64E4E5AE24C99EA200E84AFD /* SceneDelegate.swift */,
 				64E4E5B024C99EA200E84AFD /* ContentView.swift */,
 				64E4E5B224C99EA400E84AFD /* Assets.xcassets */,
+				642F3CA524CBB05600E86905 /* Colors.xcassets */,
 				64E4E5B724C99EA400E84AFD /* LaunchScreen.storyboard */,
 				64E4E5BA24C99EA400E84AFD /* Info.plist */,
 				64E4E5B424C99EA400E84AFD /* Preview Content */,
@@ -226,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642F3CA624CBB05600E86905 /* Colors.xcassets in Resources */,
 				64F247BB24CA2FC200ED89B6 /* README.md in Resources */,
 				64E4E5B924C99EA400E84AFD /* LaunchScreen.storyboard in Resources */,
 				64E4E5B624C99EA400E84AFD /* Preview Assets.xcassets in Resources */,
@@ -244,6 +265,7 @@
 				64AD3FF724C9B2C700B3E86D /* ProfileImageView.swift in Sources */,
 				64E4E5AD24C99EA200E84AFD /* AppDelegate.swift in Sources */,
 				64AD3FFB24C9CC8000B3E86D /* RoundedCorner.swift in Sources */,
+				642F3CAE24CCC4CD00E86905 /* HelpRowView.swift in Sources */,
 				64AD3FFF24C9F41600B3E86D /* TitleAndSubtitleView.swift in Sources */,
 				64AD3FEF24C99FA000B3E86D /* MenuView.swift in Sources */,
 				64728D9024CA08B500728825 /* TributacoesView.swift in Sources */,
@@ -256,6 +278,8 @@
 				64AD3FFD24C9CC9B00B3E86D /* View.swift in Sources */,
 				64AD400124C9F68300B3E86D /* DeclaracaoAjusteAnualView.swift in Sources */,
 				64728D8D24CA07E700728825 /* DeclaracoesView.swift in Sources */,
+				642F3CB024CCCEB100E86905 /* NeedHelpView.swift in Sources */,
+				642F3CAC24CCC43C00E86905 /* HelpView.swift in Sources */,
 				64E4E5B124C99EA200E84AFD /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.rphlfc.IRPF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -421,6 +446,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.rphlfc.IRPF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

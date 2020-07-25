@@ -20,8 +20,9 @@ struct UltimasDeclaracoesView: View {
                     DeclaracaoView(completed: true)
                 }
             }
+            .padding(.top, 8)
         }
-        .padding(.top, 24)
+        .padding(.top, 16)
     }
 }
 
@@ -95,10 +96,9 @@ struct DeclaracaoView: View {
             .padding(.bottom, 16)
         }
         .padding(.top, 16)
-        .background(self.completed ? Color.selectedBackgroundColor : Color.notSelectedBackgroundColor)
+        .background(self.completed ? Color.selectedBackgroundColor : Color("cardBackground"))
         .cornerRadius(15)
-        .shadow(color: .shadowColor, radius: 10)
-        
+        .shadow(color: Color("shadow"), radius: 10)
     }
 }
 

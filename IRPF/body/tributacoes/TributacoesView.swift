@@ -16,13 +16,13 @@ struct TributacoesView: View {
             HStack {
                 TributacaoView(selected: true, valor: "3.193,73")
                     .padding(.trailing, 8)
-                    .shadow(color: .shadowColor, radius: 10)
+                    .shadow(color: Color("shadow"), radius: 10)
                 
                 Spacer()
                 
                 TributacaoView(selected: false, valor: "5.486,30")
                     .padding(.leading, 8)
-                    .shadow(color: .shadowColor, radius: 10)
+                    .shadow(color: Color("shadow"), radius: 10)
             }
         }
     }
@@ -61,11 +61,11 @@ struct TributacaoView: View {
                 
                 Text(valor)
                     .font(.system(size: 28, weight: .bold))
-                    .foregroundColor(self.selected ? .tributacoesValorSelectedColor : .tributacoesValorColor)
+                    .foregroundColor(self.selected ? .tributacoesValorSelectedColor : Color("navigationForeground"))
                     .padding(.bottom, 20)
             }
             .padding(.top, 16)
-            .background(self.selected ? Color(#colorLiteral(red: 0, green: 0.4820923209, blue: 0.9983687997, alpha: 1)) : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+            .background(self.selected ? Color(#colorLiteral(red: 0, green: 0.4820923209, blue: 0.9983687997, alpha: 1)) : Color("cardBackground"))
             .cornerRadius(15)
         }
         .onTapGesture {

@@ -38,8 +38,8 @@ struct DeclaracaoAjusteAnualView: View {
                         .padding(.trailing, 8)
                         .padding(.top, 4)
                         .padding(.bottom, 4)
-                        .foregroundColor(Color(#colorLiteral(red: 0.3838093579, green: 0.567768693, blue: 0.6606589556, alpha: 1)))
-                        .background(Color(#colorLiteral(red: 0.9295499325, green: 0.953376472, blue: 0.9747241139, alpha: 1)))
+                        .foregroundColor(Color("cardButtonForeground"))
+                        .background(Color("cardButtonBackground"))
                         .cornerRadius(8)
                     }
                     .padding()
@@ -48,9 +48,9 @@ struct DeclaracaoAjusteAnualView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 160)
-        .background(Color(#colorLiteral(red: 0.999904573, green: 1, blue: 0.9998808503, alpha: 1)))
+        .background(Color("cardBackground"))
         .cornerRadius(15)
-        .shadow(color: .shadowColor, radius: 10)
+        .shadow(color: Color("shadow"), radius: 10)
     }
 }
 

@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct MenuView: View {
+    let didSelectRowAt: (Int) -> Void
+    
     private let itens = [
         MenuItem(imageName: "magnifyingglass.circle", title: "Minhas declarações"),
         MenuItem(imageName: "chart.bar", title: "Rendimentos recebidos de PF"),
@@ -22,15 +24,15 @@ struct MenuView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(itens, id: \.self) { item in
-                MenuItemView(item: item)
+            ForEach(itens.indices, id: \.self) { index in
+                MenuItemView(didSelectRowAt: self.didSelectRowAt, item: self.itens[index], index: index)
             }
             
             Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.menuBackgroundColor)
+        .background(Color("navigationBackground"))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -41,34 +43,50 @@ struct MenuItem: Hashable {
 }
 
 struct MenuItemView: View {
+    let didSelectRowAt: (Int) -> Void
     var item: MenuItem
+    let index: Int
     
     var body: some View {
-        HStack {
-            Image(systemName: self.item.imageName)
-                .foregroundColor(.menuIconColor)
-                .imageScale(.large)
-            
-            Text(self.item.title)
-                .foregroundColor(.menuTitleColor)
-                .font(.system(size: 16, weight: .bold))
-                .padding(.leading, 16)
-            
-            Spacer()
-            
-            if item.title.elementsEqual("Recibos") {
-                Image(systemName: "chevron.down")
-                    .foregroundColor(.menuTitleColor)
-                    .padding(.trailing, 16)
+        Button(action: {
+            self.didSelectRowAt(self.index)
+        }, label: {
+            HStack {
+                Image(systemName: self.item.imageName)
+                    .foregroundColor(.menuIconColor)
+                    .imageScale(.large)
                 
+                Text(self.item.title)
+                    .foregroundColor(.menuTitleColor)
+                    .font(.system(size: 16, weight: .bold))
+                    .padding(.leading, 16)
+                
+                Spacer()
+                
+                if item.title.elementsEqual("Recibos") {
+                    Image(systemName: "chevron.down")
+                        .foregroundColor(.menuTitleColor)
+                        .padding(.trailing, 16)
+                    
+                }
             }
-        }
+        })
         .padding(.top, 30)
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        Group {
+            MenuView(didSelectRowAt: { (index) in
+                
+            })
+                .environment(\.colorScheme, .light)
+            
+            MenuView(didSelectRowAt: { (index) in
+                
+            })
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

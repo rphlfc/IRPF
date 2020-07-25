@@ -9,7 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var showMenu = false
+    @State private var selectedRow: Int = 0
+    @State var showingHelp = false
     
     var body: some View {
         let drag = DragGesture()
@@ -20,6 +23,15 @@ struct ContentView: View {
                     }
                 }
         }
+        
+        let preferences = UserDefaults.standard
+        var theme = preferences.string(forKey: "userTheme")
+        if theme == nil {
+            print(colorScheme == .light ? "light" : "dark")
+            theme = colorScheme == .light ? "light" : "dark"
+        }
+        preferences.set(theme, forKey: "userTheme")
+        SceneDelegate.shared?.changeTheme(themeVal: theme!)
         
         return VStack {
             VStack {
@@ -47,11 +59,11 @@ struct ContentView: View {
                     
                     ProfileImageView()
                 }
-                
             }
             .padding(.leading, 24)
             .padding(.trailing, 24)
-            .cornerRadius(40, corners: .bottomRight)
+            .padding(.top, 40)
+            .background(Color("navigationBackground"))
             
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
@@ -59,16 +71,32 @@ struct ContentView: View {
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
                         .disabled(self.showMenu ? true : false)
+                        .sheet(isPresented: self.$showingHelp) {
+                            HelpView()
+                    }
                     
                     if self.showMenu {
-                        MenuView()
+                        MenuView(didSelectRowAt: self.didSelectRow(index:))
                             .frame(width: geometry.size.width / 2)
-                            //.transition(.move(edge: .leading))
                             .animation(.spring())
                     }
                 }
                 .gesture(drag)
             }
+        }
+        .edgesIgnoringSafeArea(.all)
+        .background(Color("navigationBackground"))
+    }
+    
+    func didSelectRow(index: Int) {
+        self.selectedRow = index
+        
+        withAnimation {
+            self.showMenu.toggle()
+        }
+        
+        if index == 7 {
+            self.showingHelp.toggle()
         }
     }
 }
@@ -78,7 +106,7 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Color.mainBackgroundColor.edgesIgnoringSafeArea(.all)
+            Color("mainBackground").edgesIgnoringSafeArea(.all)
             
             ScrollView {
                 VStack {
@@ -98,6 +126,7 @@ struct MainView: View {
                     }
                     .padding(.leading, 24)
                     .padding(.trailing, 24)
+                    .padding(.bottom, 24)
                 }
             }
         }
@@ -106,6 +135,10 @@ struct MainView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView().environment(\.colorScheme, .light)
+            
+            ContentView().environment(\.colorScheme, .dark)
+        }
     }
 }
