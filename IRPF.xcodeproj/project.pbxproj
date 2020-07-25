@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642F3CA624CBB05600E86905 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642F3CA524CBB05600E86905 /* Colors.xcassets */; };
 		64728D8924CA013100728825 /* UltimasDeclaracoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64728D8824CA013100728825 /* UltimasDeclaracoesView.swift */; };
 		64728D8B24CA031A00728825 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64728D8A24CA031A00728825 /* ProgressBar.swift */; };
 		64728D8D24CA07E700728825 /* DeclaracoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64728D8C24CA07E700728825 /* DeclaracoesView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		642F3CA524CBB05600E86905 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		64728D8824CA013100728825 /* UltimasDeclaracoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimasDeclaracoesView.swift; sourceTree = "<group>"; };
 		64728D8A24CA031A00728825 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		64728D8C24CA07E700728825 /* DeclaracoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclaracoesView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				64E4E5AE24C99EA200E84AFD /* SceneDelegate.swift */,
 				64E4E5B024C99EA200E84AFD /* ContentView.swift */,
 				64E4E5B224C99EA400E84AFD /* Assets.xcassets */,
+				642F3CA524CBB05600E86905 /* Colors.xcassets */,
 				64E4E5B724C99EA400E84AFD /* LaunchScreen.storyboard */,
 				64E4E5BA24C99EA400E84AFD /* Info.plist */,
 				64E4E5B424C99EA400E84AFD /* Preview Content */,
@@ -226,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642F3CA624CBB05600E86905 /* Colors.xcassets in Resources */,
 				64F247BB24CA2FC200ED89B6 /* README.md in Resources */,
 				64E4E5B924C99EA400E84AFD /* LaunchScreen.storyboard in Resources */,
 				64E4E5B624C99EA400E84AFD /* Preview Assets.xcassets in Resources */,

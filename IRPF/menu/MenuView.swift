@@ -30,7 +30,7 @@ struct MenuView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.menuBackgroundColor)
+        .background(Color("navigationBackground"))
         .edgesIgnoringSafeArea(.all)
     }
 }
@@ -69,6 +69,12 @@ struct MenuItemView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        Group {
+            MenuView()
+                .environment(\.colorScheme, .light)
+            
+            MenuView()
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

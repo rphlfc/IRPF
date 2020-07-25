@@ -13,13 +13,13 @@ struct TiposDeclaracaoView: View {
         HStack {
             TipoDeclaracaoHalfView(imageName: "image2", topLine: "Declaração final", bottomLine: "de espólio")
                 .padding(.trailing, 8)
-                .shadow(color: .shadowColor, radius: 10)
+                .shadow(color: Color("shadow"), radius: 10)
             
             Spacer()
             
             TipoDeclaracaoHalfView(imageName: "image3", topLine: "Declaração de", bottomLine: "saída do país")
                 .padding(.leading, 8)
-                .shadow(color: .shadowColor, radius: 10)
+                .shadow(color: Color("shadow"), radius: 10)
         }
         .frame(maxWidth: .infinity)
     }
@@ -63,8 +63,8 @@ struct TipoDeclaracaoHalfView: View {
                     .padding(.trailing, 8)
                     .padding(.top, 4)
                     .padding(.bottom, 4)
-                    .foregroundColor(Color(#colorLiteral(red: 0.3838093579, green: 0.567768693, blue: 0.6606589556, alpha: 1)))
-                    .background(Color(#colorLiteral(red: 0.9295499325, green: 0.953376472, blue: 0.9747241139, alpha: 1)))
+                    .foregroundColor(Color("cardButtonForeground"))
+                    .background(Color("cardButtonBackground"))
                     .cornerRadius(8)
                 }
                 .padding(.trailing, 16)
@@ -72,7 +72,7 @@ struct TipoDeclaracaoHalfView: View {
             .padding(.top, 16)
             .padding(.bottom, 16)
         }
-        .background(Color.white)
+        .background(Color("cardBackground"))
         .cornerRadius(20)
     }
 }

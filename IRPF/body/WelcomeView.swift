@@ -8,6 +8,20 @@
 
 import SwiftUI
 
+
+struct CheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        return HStack {
+            configuration.label
+            Spacer()
+            Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                .resizable()
+                .frame(width: 22, height: 22)
+                .onTapGesture { configuration.isOn.toggle() }
+        }
+    }
+}
+
 struct WelcomeView: View {
     var body: some View {
         VStack {
@@ -18,7 +32,7 @@ struct WelcomeView: View {
                         .font(.system(size: 14, weight: .semibold, design: .rounded))
                     
                     Text("Evaristo Costa")
-                        .foregroundColor(Color(#colorLiteral(red: 0.156845212, green: 0.1568739116, blue: 0.1568388939, alpha: 1)))
+                        .foregroundColor(Color("navigationForeground"))
                         .font(.system(size: 32, weight: .black))
                 }
                 .padding(.leading, 24)
@@ -28,22 +42,22 @@ struct WelcomeView: View {
                 
                 VStack {
                     Button(action: {
-                        print("Dark mode")
+                        print("dark mode")
                     }) {
                         Image(systemName: "moon.circle.fill")
                             .resizable()
-                            .foregroundColor(.darkModeButtonColor)
+                            .foregroundColor(Color("navigationForeground"))
                     }
                     .frame(width: 30, height: 30)
                     .padding(.trailing, 24)
                 }
             }
-            .background(Color.welcomeBanckgroundColor)
+            .background(Color("navigationBackground"))
             .padding(.top, 24)
         }
-        .background(Color.welcomeBanckgroundColor)
+        .background(Color("navigationBackground"))
         .cornerRadius(40, corners: [.bottomRight])
-        .shadow(color: .shadowColor, radius: 10)
+        .shadow(color: Color("shadow"), radius: 10)
     }
 }
 

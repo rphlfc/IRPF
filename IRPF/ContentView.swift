@@ -47,11 +47,10 @@ struct ContentView: View {
                     
                     ProfileImageView()
                 }
-                
             }
             .padding(.leading, 24)
             .padding(.trailing, 24)
-            .cornerRadius(40, corners: .bottomRight)
+            .background(Color("navigationBackground"))
             
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
@@ -63,13 +62,13 @@ struct ContentView: View {
                     if self.showMenu {
                         MenuView()
                             .frame(width: geometry.size.width / 2)
-                            //.transition(.move(edge: .leading))
                             .animation(.spring())
                     }
                 }
                 .gesture(drag)
             }
         }
+        .background(Color("navigationBackground"))
     }
 }
 
@@ -78,7 +77,7 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Color.mainBackgroundColor.edgesIgnoringSafeArea(.all)
+            Color("mainBackground").edgesIgnoringSafeArea(.all)
             
             ScrollView {
                 VStack {
@@ -106,6 +105,12 @@ struct MainView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .environment(\.colorScheme, .light)
+            
+            ContentView()
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
