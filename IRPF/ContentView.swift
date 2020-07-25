@@ -109,6 +109,7 @@ struct MainView: View {
                     }
                     .padding(.leading, 24)
                     .padding(.trailing, 24)
+                    .padding(.bottom, 24)
                 }
             }
         }
