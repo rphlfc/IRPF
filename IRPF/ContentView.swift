@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var showMenu = false
+    @State private var selectedRow: Int = 0
+    @State var showingHelp = false
     
     var body: some View {
         let drag = DragGesture()
@@ -69,9 +71,12 @@ struct ContentView: View {
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
                         .disabled(self.showMenu ? true : false)
+                        .sheet(isPresented: self.$showingHelp) {
+                            HelpView()
+                    }
                     
                     if self.showMenu {
-                        MenuView()
+                        MenuView(didSelectRowAt: self.didSelectRow(index:))
                             .frame(width: geometry.size.width / 2)
                             .animation(.spring())
                     }
@@ -81,6 +86,18 @@ struct ContentView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .background(Color("navigationBackground"))
+    }
+    
+    func didSelectRow(index: Int) {
+        self.selectedRow = index
+        
+        withAnimation {
+            self.showMenu.toggle()
+        }
+        
+        if index == 7 {
+            self.showingHelp.toggle()
+        }
     }
 }
 
@@ -119,11 +136,9 @@ struct MainView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
-                .environment(\.colorScheme, .light)
+            ContentView().environment(\.colorScheme, .light)
             
-            ContentView()
-                .environment(\.colorScheme, .dark)
+            ContentView().environment(\.colorScheme, .dark)
         }
     }
 }
