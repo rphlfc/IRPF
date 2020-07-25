@@ -23,6 +23,9 @@ struct CheckboxToggleStyle: ToggleStyle {
 }
 
 struct WelcomeView: View {
+    @Environment(\.colorScheme) var colorScheme
+    @State var isDarkOn = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -42,13 +45,22 @@ struct WelcomeView: View {
                 
                 VStack {
                     Button(action: {
-                        print("dark mode")
+                        let preferences = UserDefaults.standard
+                        var theme = preferences.string(forKey: "userTheme")
+                        if theme == "light" {
+                            theme = "dark"
+                        } else {
+                           theme = "light"
+                        }
+                        preferences.set(theme, forKey: "userTheme")
+                        SceneDelegate.shared?.changeTheme(themeVal: theme!)
                     }) {
-                        Image(systemName: "moon.circle.fill")
-                            .resizable()
-                            .foregroundColor(Color("navigationForeground"))
+                        Image(systemName: self.colorScheme == .light ? "moon.fill" : "sun.max.fill")
+                        .foregroundColor(Color("modeButtonForeground"))
                     }
                     .frame(width: 30, height: 30)
+                    .background(Color("modeButtonBackground"))
+                    .cornerRadius(15)
                     .padding(.trailing, 24)
                 }
             }

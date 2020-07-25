@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var showMenu = false
     
     var body: some View {
@@ -20,6 +21,15 @@ struct ContentView: View {
                     }
                 }
         }
+        
+        let preferences = UserDefaults.standard
+        var theme = preferences.string(forKey: "userTheme")
+        if theme == nil {
+            print(colorScheme == .light ? "light" : "dark")
+            theme = colorScheme == .light ? "light" : "dark"
+        }
+        preferences.set(theme, forKey: "userTheme")
+        SceneDelegate.shared?.changeTheme(themeVal: theme!)
         
         return VStack {
             VStack {
@@ -50,6 +60,7 @@ struct ContentView: View {
             }
             .padding(.leading, 24)
             .padding(.trailing, 24)
+            .padding(.top, 40)
             .background(Color("navigationBackground"))
             
             GeometryReader { geometry in
@@ -68,6 +79,7 @@ struct ContentView: View {
                 .gesture(drag)
             }
         }
+        .edgesIgnoringSafeArea(.all)
         .background(Color("navigationBackground"))
     }
 }
