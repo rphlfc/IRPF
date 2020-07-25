@@ -31,4 +31,5 @@ Modo escuro
 - Xcode 11.4
 
 Design por [Guilherme Farina](https://www.linkedin.com/in/guilherme-farina-2734329a/)
+
 Implementação por [Raphael Cerqueira](https://www.linkedin.com/in/rphlfc/)
